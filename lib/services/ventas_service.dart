@@ -1,16 +1,36 @@
-double calcularIVA(double precio){
-  return precio*0.21;
-}
+// double calcularIVA(double precio){
+//   return precio*0.21;
+// }
 
-double cacularPrecioFinal(double precio, double descuento){
-  return precio - descuento;
-}
+// double cacularPrecioFinal(double precio, double descuento){
+//   return precio - descuento;
+// }
 
-double calcularVenta({required double precio,  double descuento=0}){
-  return precio - descuento;
-}
+// double calcularVenta({required double precio,  double descuento=0}){
+//   return precio - descuento;
+// }
 
-double calcularPrecioConIVA(double precio,{double iva = 0.21}){
+// double calcularPrecioConIVA(double precio,{double iva = 0.21}){
 
-  return precio*(1+iva);
+//   return precio*(1+iva);
+// }
+
+// double aplicarDescuento(double precio, double descuento) => precio - descuento;
+
+// double procesarPrecio(double precio, double Function(double) operacion){
+//   return operacion(precio);
+// }
+
+// var nuevoPrecio = procesarPrecio(100, (precio)=>precio*0.9);
+// var nuevoPrecio2 = procesarPrecio(100, (precio)=>precio*1.21);
+// var nuevoPrecio3 = procesarPrecio(100, (precio)=>precio*0.21);
+
+class VentasService {
+  double calcularDescuento(double precio, {double porcentaje = 0}) {
+    return precio - (precio * porcentaje);
+  }
+
+ double calcularIVA(double precio, {double iva = 0.21}) {
+    return precio * (1 + iva);
+  }
 }
